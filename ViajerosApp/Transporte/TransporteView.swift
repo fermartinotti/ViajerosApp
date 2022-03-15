@@ -12,11 +12,31 @@ struct TransporteView: View {
     @StateObject var transporteVM=TransporteViewModel()
     
     var body: some View {
-        VStack {
-            Header()
-            Spacer()
+        NavigationView {
+            VStack {
+                Header()
+                //Si no tengo transportes cargados todavia:
+                if(transporteVM.misTransportes.count==0){
+                    Spacer()
+                    ZStack {
+                        Image("empty")
+                            .resizable().frame(width: 200, height: 200)
+                        Text("No hay transportes registrados")
+                            .bold()
+                            .font(.title3)
+                            .foregroundColor(.red)
+                    }
+                }else{
+
+                }
+                Spacer()
+            }
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
         }
+        .environmentObject(transporteVM)
     }
+    
 }
 
 struct TransporteView_Previews: PreviewProvider {
@@ -33,8 +53,11 @@ struct Header: View {
                 .padding()
                 .font(.title)
             Spacer()
-            Image("addTicket")
-                .padding()
+            NavigationLink(destination: RegistrarTransporteView(),
+            label: {
+                Image("addTicket").padding()
+            })
+            
         }
         .padding(.top)
     }
