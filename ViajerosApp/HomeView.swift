@@ -9,15 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     
-    var primerInicio = true
-    
     var body: some View {
-        if(primerInicio){
-            PrimerViajeView()
-        }else{
-            HomeTabView()
-        }
-            
+        HomeTabView()
     }
 }
 

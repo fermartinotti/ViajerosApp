@@ -9,11 +9,12 @@ import SwiftUI
 
 struct TransporteView: View {
     
-    @State var moveToNextScreen = false
+    @StateObject var transporteVM=TransporteViewModel()
     
     var body: some View {
         VStack {
-            Text("Transporte")
+            Header()
+            Spacer()
         }
     }
 }
@@ -21,5 +22,20 @@ struct TransporteView: View {
 struct TransporteView_Previews: PreviewProvider {
     static var previews: some View {
         TransporteView()
+    }
+}
+
+struct Header: View {
+    var body: some View {
+        HStack{
+            Text("Mis Transportes")
+                .bold()
+                .padding()
+                .font(.title)
+            Spacer()
+            Image("addTicket")
+                .padding()
+        }
+        .padding(.top)
     }
 }
