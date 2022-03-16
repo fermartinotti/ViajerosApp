@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E0701D4427E0FDC800567CC2 /* TransporteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0701D4327E0FDC800567CC2 /* TransporteViewModel.swift */; };
 		E0701D4627E0FDD400567CC2 /* TransporteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0701D4527E0FDD400567CC2 /* TransporteModel.swift */; };
-		E0701D4827E1046500567CC2 /* RegistrarTransporteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0701D4727E1046500567CC2 /* RegistrarTransporteView.swift */; };
+		E0701D4827E1046500567CC2 /* AgregarTransporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0701D4727E1046500567CC2 /* AgregarTransporte.swift */; };
 		E0A6831327DD5A7000A18E5A /* TransporteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A6831227DD5A7000A18E5A /* TransporteView.swift */; };
 		E0D560CA27DE69C700A270CA /* GastosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D560C927DE69C700A270CA /* GastosView.swift */; };
 		E0D560CD27DF7EDB00A270CA /* EquipajeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D560CC27DF7EDB00A270CA /* EquipajeView.swift */; };
@@ -24,7 +24,7 @@
 /* Begin PBXFileReference section */
 		E0701D4327E0FDC800567CC2 /* TransporteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransporteViewModel.swift; sourceTree = "<group>"; };
 		E0701D4527E0FDD400567CC2 /* TransporteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransporteModel.swift; sourceTree = "<group>"; };
-		E0701D4727E1046500567CC2 /* RegistrarTransporteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarTransporteView.swift; sourceTree = "<group>"; };
+		E0701D4727E1046500567CC2 /* AgregarTransporte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarTransporte.swift; sourceTree = "<group>"; };
 		E0A6831227DD5A7000A18E5A /* TransporteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransporteView.swift; sourceTree = "<group>"; };
 		E0D560C927DE69C700A270CA /* GastosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GastosView.swift; sourceTree = "<group>"; };
 		E0D560CC27DF7EDB00A270CA /* EquipajeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipajeView.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 				E0A6831227DD5A7000A18E5A /* TransporteView.swift */,
 				E0701D4327E0FDC800567CC2 /* TransporteViewModel.swift */,
 				E0701D4527E0FDD400567CC2 /* TransporteModel.swift */,
-				E0701D4727E1046500567CC2 /* RegistrarTransporteView.swift */,
+				E0701D4727E1046500567CC2 /* AgregarTransporte.swift */,
 			);
 			path = Transporte;
 			sourceTree = "<group>";
@@ -197,7 +197,7 @@
 				E0D560CD27DF7EDB00A270CA /* EquipajeView.swift in Sources */,
 				E0701D4427E0FDC800567CC2 /* TransporteViewModel.swift in Sources */,
 				E0701D4627E0FDD400567CC2 /* TransporteModel.swift in Sources */,
-				E0701D4827E1046500567CC2 /* RegistrarTransporteView.swift in Sources */,
+				E0701D4827E1046500567CC2 /* AgregarTransporte.swift in Sources */,
 				E0D560CA27DE69C700A270CA /* GastosView.swift in Sources */,
 				E0A6831327DD5A7000A18E5A /* TransporteView.swift in Sources */,
 				E0EF50EE27DBB8F200DE7194 /* HomeView.swift in Sources */,

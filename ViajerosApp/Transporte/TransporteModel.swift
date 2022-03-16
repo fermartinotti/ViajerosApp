@@ -7,21 +7,29 @@
 
 import Foundation
 
-struct transporteModel : Identifiable,Codable{
+enum TipoDeViaje: Encodable, Decodable {
+    case AVION
+    case BARCO
+    case TREN
+}
+
+struct transporteModel : Identifiable,Encodable,Decodable{
     let id: String
     var origen:String
     var destingo:String
     var fechaSalida:Date
     var fechaLlegada:Date
     var codigoViaje:String
+    var tipoDeViaje:TipoDeViaje
     
-    init(origen:String, destino:String, fechaSalida:Date, fechaLlegada:Date, codigoViaje:String){
+    init(origen:String, destino:String, fechaSalida:Date, fechaLlegada:Date, codigoViaje:String, tipoDeViaje:TipoDeViaje){
         id=UUID().uuidString
         self.origen=origen
         self.destingo=destino
         self.fechaSalida=fechaSalida
         self.fechaLlegada=fechaLlegada
         self.codigoViaje=codigoViaje
+        self.tipoDeViaje=tipoDeViaje
     }
     
 }
