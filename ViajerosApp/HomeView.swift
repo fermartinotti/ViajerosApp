@@ -4,20 +4,12 @@
 //
 //  Created by Hector Fernando Martinotti on 11/03/2022.
 //
-
 import SwiftUI
 
 struct HomeView: View {
     
-    var primerInicio = true
-    
     var body: some View {
-        if(primerInicio){
-            PrimerViajeView()
-        }else{
-            HomeTabView()
-        }
-            
+        HomeTabView()
     }
 }
 
