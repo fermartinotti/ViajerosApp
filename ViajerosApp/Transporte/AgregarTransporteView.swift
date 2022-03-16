@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AgregarTransporte: View {
+struct AgregarTransporteView: View {
     
     @EnvironmentObject var transporteVM:TransporteViewModel
     @Environment(\.presentationMode) var pantallaActual
@@ -70,7 +70,10 @@ struct AgregarTransporte: View {
             .navigationBarTitle("")
             //.navigationBarHidden(true)
             Button(
-                action: {},
+                action: {
+                    transporteVM.agregarTransporte(origen: origen, destino: destino, fechaSalida: fechaOrigen, fechaLlegada: fechaDestino, codigoViaje: codigoViaje, tipoDeViaje: tipoDeViaje)
+                    pantallaActual.wrappedValue.dismiss()
+                },
                 label: {
                     Text("Guardar")
                         .font(.title3)
@@ -92,6 +95,6 @@ struct AgregarTransporte: View {
 
 struct RegistrarTransporteView_Previews: PreviewProvider {
     static var previews: some View {
-        AgregarTransporte(tipoDeViaje: TipoDeViaje.BARCO)
+        AgregarTransporteView(tipoDeViaje: TipoDeViaje.BARCO)
     }
 }

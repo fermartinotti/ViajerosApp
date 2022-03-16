@@ -35,15 +35,15 @@ struct TransporteView: View {
                     }
                     
                     NavigationLink(isActive: $irACrearBarco,
-                                   destination: {AgregarTransporte(tipoDeViaje: TipoDeViaje.BARCO)},
+                                   destination: {AgregarTransporteView(tipoDeViaje: TipoDeViaje.BARCO)},
                                    label: {
                     })
                     NavigationLink(isActive: $irACrearAvion,
-                                   destination: {AgregarTransporte(tipoDeViaje: TipoDeViaje.AVION)},
+                                   destination: {AgregarTransporteView(tipoDeViaje: TipoDeViaje.AVION)},
                                    label: {
                     })
                     NavigationLink(isActive: $irACrearTren,
-                                   destination: {AgregarTransporte(tipoDeViaje: TipoDeViaje.TREN)},
+                                   destination: {AgregarTransporteView(tipoDeViaje: TipoDeViaje.TREN)},
                                    label: {
                     })
                 }
@@ -56,16 +56,25 @@ struct TransporteView: View {
                     ZStack {
                         Image("empty")
                             .resizable().frame(width: 200, height: 200)
-                        Text("No hay transportes registrados")
-                            .bold()
-                            .font(.title3)
-                            .foregroundColor(.red)
                     }
                 }else{
-
+                    List{
+                        ForEach(transporteVM.misTransportes) {unTransporte in
+                            
+                            VStack {
+                                switch unTransporte.tipoDeViaje{
+                                    case .AVION:
+                                    Card(imagenBackground: "AvionBackground", origen: unTransporte.origen, destino: unTransporte.destino, codigo: unTransporte.codigoViaje)
+                                    case .BARCO:
+                                    Card(imagenBackground: "BarcoBackground", origen: unTransporte.origen, destino: unTransporte.destino, codigo: unTransporte.codigoViaje)
+                                    case .TREN:
+                                    Card(imagenBackground: "TrenBackground", origen: unTransporte.origen, destino: unTransporte.destino, codigo: unTransporte.codigoViaje)
+                                }
+                                
+                            }
+                        }
+                    }
                 }
-                
-                
                 Spacer()
                 
             }
@@ -78,22 +87,40 @@ struct TransporteView: View {
 }
 
 struct Card: View {
-    @State var icono:String
-    @State var titulo:String
+    
+    @State var imagenBackground:String
+    @State var origen:String
+    @State var destino:String
+    @State var codigo:String
     
     var body: some View {
-        ZStack{
-            RoundedRectangle(cornerRadius: 10, style: .continuous)
-                .fill(.white)
-                .frame(width: 80, height: 80)
-                .shadow(color: .gray, radius: 6, x:-1, y:-1)
-                .shadow(color: .gray, radius: 6, x:1, y:1)
-            VStack {
-                Image(icono)
-                    .resizable().frame(width: 35, height: 35)
-                Text(titulo)
-                    .bold()
-            }
+        ZStack(alignment: .topLeading){
+            Image(imagenBackground)
+                .resizable()
+                .frame(width: 300, height: 140)
+                .scaledToFill()
+                .colorMultiply(.gray)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10).stroke()
+                        .shadow(color: .gray, radius: 6, x:-1, y:-1)
+                        .shadow(color: .gray, radius: 6, x:1, y:1)
+                )
+            VStack(alignment: .leading) {
+                HStack{
+                    Text(origen)
+                        .font(.title3)
+                    Image(systemName: "arrow.right")
+                    Text(destino)
+                }
+                .foregroundColor(.white)
+                HStack{
+                    Image(systemName: "barcode.viewfinder")
+                        .font(.title3)
+                    Text(codigo)
+                }
+                .foregroundColor(.white)
+            }.padding()
         }
         .padding()
     }
