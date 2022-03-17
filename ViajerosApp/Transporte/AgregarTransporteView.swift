@@ -49,7 +49,7 @@ struct AgregarTransporteView: View {
                 Section(header: Text("Origen")){
                     HStack {
                         Image(systemName: "mappin.circle.fill")
-                        TextField("Origen", text: $origen)
+                        TextField(origen, text: $origen)
                     }
                         DatePicker("Fecha", selection: $fechaOrigen)
                 }

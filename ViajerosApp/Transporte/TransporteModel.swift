@@ -13,7 +13,7 @@ enum TipoDeViaje: Encodable, Decodable {
     case TREN
 }
 
-struct transporteModel : Identifiable,Encodable,Decodable{
+struct transporteModel : Identifiable,Encodable,Decodable, Equatable{
     let id: String
     var origen:String
     var destino:String

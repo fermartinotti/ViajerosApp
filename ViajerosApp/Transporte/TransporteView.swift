@@ -61,7 +61,7 @@ struct TransporteView: View {
                     List{
                         ForEach(transporteVM.misTransportes) {unTransporte in
                             NavigationLink(
-                                destination: DetalleTransporteView(),
+                                destination: DetalleTransporteView(origen: unTransporte.origen, destino: unTransporte.destino, fechaOrigen: unTransporte.fechaSalida, fechaDestino: unTransporte.fechaLlegada, codigoViaje: unTransporte.codigoViaje),
                                 label: {
                                     VStack {
                                         switch unTransporte.tipoDeViaje{
@@ -77,7 +77,7 @@ struct TransporteView: View {
                             })
                             .swipeActions(edge: .leading){
                                 Button {
-                                    //accion
+                                    transporteVM.borrarTransporte(transporte: unTransporte)
                                 }label:{
                                     Image("delete")
                                 }
