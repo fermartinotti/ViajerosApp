@@ -11,6 +11,7 @@
 		E0701D4627E0FDD400567CC2 /* TransporteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0701D4527E0FDD400567CC2 /* TransporteModel.swift */; };
 		E0701D4827E1046500567CC2 /* AgregarTransporteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0701D4727E1046500567CC2 /* AgregarTransporteView.swift */; };
 		E0A6831327DD5A7000A18E5A /* TransporteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A6831227DD5A7000A18E5A /* TransporteView.swift */; };
+		E0BBA56127E2B8D900573CEA /* DetalleTransporteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BBA56027E2B8D900573CEA /* DetalleTransporteView.swift */; };
 		E0D560CA27DE69C700A270CA /* GastosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D560C927DE69C700A270CA /* GastosView.swift */; };
 		E0D560CD27DF7EDB00A270CA /* EquipajeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D560CC27DF7EDB00A270CA /* EquipajeView.swift */; };
 		E0D560D027DF7FA300A270CA /* InicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D560CF27DF7FA300A270CA /* InicioView.swift */; };
@@ -26,6 +27,7 @@
 		E0701D4527E0FDD400567CC2 /* TransporteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransporteModel.swift; sourceTree = "<group>"; };
 		E0701D4727E1046500567CC2 /* AgregarTransporteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarTransporteView.swift; sourceTree = "<group>"; };
 		E0A6831227DD5A7000A18E5A /* TransporteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransporteView.swift; sourceTree = "<group>"; };
+		E0BBA56027E2B8D900573CEA /* DetalleTransporteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleTransporteView.swift; sourceTree = "<group>"; };
 		E0D560C927DE69C700A270CA /* GastosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GastosView.swift; sourceTree = "<group>"; };
 		E0D560CC27DF7EDB00A270CA /* EquipajeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipajeView.swift; sourceTree = "<group>"; };
 		E0D560CF27DF7FA300A270CA /* InicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 				E0701D4327E0FDC800567CC2 /* TransporteViewModel.swift */,
 				E0701D4527E0FDD400567CC2 /* TransporteModel.swift */,
 				E0701D4727E1046500567CC2 /* AgregarTransporteView.swift */,
+				E0BBA56027E2B8D900573CEA /* DetalleTransporteView.swift */,
 			);
 			path = Transporte;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				E0701D4827E1046500567CC2 /* AgregarTransporteView.swift in Sources */,
 				E0D560CA27DE69C700A270CA /* GastosView.swift in Sources */,
 				E0A6831327DD5A7000A18E5A /* TransporteView.swift in Sources */,
+				E0BBA56127E2B8D900573CEA /* DetalleTransporteView.swift in Sources */,
 				E0EF50EE27DBB8F200DE7194 /* HomeView.swift in Sources */,
 				E0EF50FA27DBC4B200DE7194 /* PrimerViajeView.swift in Sources */,
 				E0EF50EC27DBB8F200DE7194 /* ViajerosAppApp.swift in Sources */,

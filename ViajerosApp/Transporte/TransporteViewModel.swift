@@ -21,4 +21,9 @@ class TransporteViewModel: ObservableObject{
         misTransportes.append(nuevoTransporte)
     }
     
+    func borrarTransporte(id:String){
+        var transporteABorar = misTransportes.first(where: {transporte in transporte.id == id})
+        
+    }
+    
 }

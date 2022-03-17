@@ -60,20 +60,32 @@ struct TransporteView: View {
                 }else{
                     List{
                         ForEach(transporteVM.misTransportes) {unTransporte in
-                            
-                            VStack {
-                                switch unTransporte.tipoDeViaje{
-                                    case .AVION:
-                                    Card(imagenBackground: "AvionBackground", origen: unTransporte.origen, destino: unTransporte.destino, codigo: unTransporte.codigoViaje)
-                                    case .BARCO:
-                                    Card(imagenBackground: "BarcoBackground", origen: unTransporte.origen, destino: unTransporte.destino, codigo: unTransporte.codigoViaje)
-                                    case .TREN:
-                                    Card(imagenBackground: "TrenBackground", origen: unTransporte.origen, destino: unTransporte.destino, codigo: unTransporte.codigoViaje)
+                            NavigationLink(
+                                destination: Text("una vista detalle"),
+                                label: {
+                                    VStack {
+                                        switch unTransporte.tipoDeViaje{
+                                            case .AVION:
+                                            Card(imagenBackground: "AvionBackground", origen: unTransporte.origen, destino: unTransporte.destino, codigo: unTransporte.codigoViaje)
+                                            case .BARCO:
+                                            Card(imagenBackground: "BarcoBackground", origen: unTransporte.origen, destino: unTransporte.destino, codigo: unTransporte.codigoViaje)
+                                            case .TREN:
+                                            Card(imagenBackground: "TrenBackground", origen: unTransporte.origen, destino: unTransporte.destino, codigo: unTransporte.codigoViaje)
+                                        }
+                                        
+                                    }
+                            })
+                            .swipeActions(edge: .leading){
+                                Button {
+                                    //accion
+                                }label:{
+                                    Image("delete")
                                 }
-                                
                             }
+                            .listRowInsets(EdgeInsets())
                         }
-                    }
+                    }.listStyle(PlainListStyle())
+                        
                 }
                 Spacer()
                 
@@ -97,14 +109,14 @@ struct Card: View {
         ZStack(alignment: .topLeading){
             Image(imagenBackground)
                 .resizable()
-                .frame(width: 300, height: 140)
+                .frame(width: 320, height: 150)
                 .scaledToFill()
                 .colorMultiply(.gray)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .overlay(
                     RoundedRectangle(cornerRadius: 10).stroke()
-                        .shadow(color: .gray, radius: 6, x:-1, y:-1)
-                        .shadow(color: .gray, radius: 6, x:1, y:1)
+                        .shadow(color: .gray, radius: 10, x:-5, y:-5)
+                        .shadow(color: .black, radius: 10, x:8, y:8)
                 )
             VStack(alignment: .leading) {
                 HStack{
