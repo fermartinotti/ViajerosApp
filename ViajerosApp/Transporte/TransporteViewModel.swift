@@ -13,6 +13,8 @@ class TransporteViewModel: ObservableObject{
     
     init(){
         // Precargar algunos transportes.
+        let transporteEjemplo = transporteModel(origen: "ARG", destino: "VNZ", fechaSalida: Date.now, fechaLlegada: Date.now, codigoViaje: "f3inf34k", tipoDeViaje: TipoDeViaje.AVION)
+        misTransportes.append(transporteEjemplo)
     }
     
     func agregarTransporte(origen:String, destino:String, fechaSalida:Date, fechaLlegada:Date, codigoViaje:String, tipoDeViaje:TipoDeViaje){

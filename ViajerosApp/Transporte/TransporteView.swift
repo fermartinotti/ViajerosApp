@@ -61,7 +61,7 @@ struct TransporteView: View {
                     List{
                         ForEach(transporteVM.misTransportes) {unTransporte in
                             NavigationLink(
-                                destination: Text("una vista detalle"),
+                                destination: DetalleTransporteView(),
                                 label: {
                                     VStack {
                                         switch unTransporte.tipoDeViaje{
