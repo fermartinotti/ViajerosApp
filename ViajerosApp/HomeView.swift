@@ -9,19 +9,21 @@ import SwiftUI
 
 struct HomeView: View {
     
-    var primerInicio = true
-    
     var body: some View {
-        if(primerInicio){
-            PrimerViajeView()
-        }else{
-            HomeTabView()
-        }
-            
+        HomeTabView()
     }
 }
 
 struct HomeTabView: View {
+    
+    init(){
+        let appaerance = UITabBarAppearance()
+        appaerance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+        appaerance.backgroundColor = UIColor(Color.white.opacity(0.5))
+        
+        UITabBar.appearance().standardAppearance = appaerance
+        UITabBar.appearance().scrollEdgeAppearance = appaerance
+    }
     
     var body: some View {
         TabView{
@@ -54,7 +56,6 @@ struct HomeTabView: View {
                     }
                 }
         }
-        //.navigationBarBackButtonHidden(true)
     }
 }
 
