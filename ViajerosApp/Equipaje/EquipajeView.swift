@@ -57,7 +57,16 @@ struct EquipajeView: View {
                             Section(header: Text("Mi equipaje")) {
                                 ForEach(equipajeVM.misItems) {unItem in
                                     HStack {
-                                        Image(systemName: "shippingbox.circle.fill")
+                                        Button {
+                                            equipajeVM.marcarItem(item: unItem, resultado: !unItem.done)
+                                        }label:{
+                                            if (unItem.done){
+                                                Image(systemName: "checkmark.circle.fill")
+                                                    .foregroundColor(.green)
+                                            }else{
+                                                Image(systemName: "circle")
+                                            }
+                                        }
                                         Text("\(unItem.descripcion) X\(unItem.cantidad)")
                                             .strikethrough(unItem.done, color: .black)
                                     }
@@ -69,7 +78,7 @@ struct EquipajeView: View {
                                         }
                                     }.swipeActions(edge: .trailing){
                                         Button {
-                                            equipajeVM.marcarItem(item: unItem)
+                                            equipajeVM.marcarItem(item: unItem, resultado: !unItem.done)
                                         }label:{
                                             Image(systemName: "bookmark.slash.fill")
                                         }

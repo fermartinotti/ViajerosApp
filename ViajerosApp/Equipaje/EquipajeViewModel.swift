@@ -12,7 +12,7 @@ class EquipajeViewModel : ObservableObject {
     @Published var misItems:[itemModel] = []
     
     init (){
-        var itemUno=itemModel(descripcion: "Remeras", cantidad: 5)
+        //var itemUno=itemModel(descripcion: "Remeras", cantidad: 5)
         //misItems.append(itemUno)
         //cargar lista de items.
     }
@@ -28,10 +28,10 @@ class EquipajeViewModel : ObservableObject {
         }
     }
     
-    func marcarItem(item:itemModel){
+    func marcarItem(item:itemModel, resultado:Bool){
         let posicionAActualizar=misItems.firstIndex(of: item)
             if let posicion=posicionAActualizar{
-                misItems[posicion].done=true
+                misItems[posicion].done=resultado
             }
     }
     
