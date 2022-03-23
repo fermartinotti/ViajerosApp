@@ -19,25 +19,26 @@ struct GastosView: View {
             VStack {
                 HStack{
                     Text("Mis gastos")
-                    
                         .bold()
                         .font(.title)
+                        .navigationBarTitle("")
+                        .navigationBarHidden(true)
                 }
                 List {
                     ForEach(gastosVM.misGastos) {unGasto in
                         NavigationLink(
-                            destination: NuevoGastoView(tipoDeGasto: tipoDeGasto.COMPRAS),
+                            destination: DetalleGastoView(nombreGasto: unGasto.nombreGasto, fechaGasto: unGasto.fecha, descripcion: unGasto.descripcion, importe: unGasto.importe, tipoDeGasto: unGasto.tipoDeGasto),
                             label: {
                                 Text(unGasto.nombreGasto)
                             })
                     }
                 }
                 NavigationLink(
-                    destination: NuevoGastoView(tipoDeGasto: tipoDeGasto.COMPRAS),
+                    destination: NuevoGastoView(),
                     label: {
-                        Text("+")
-                            .font(.title)
+                        Image("add_expenses")
                 })
+                Spacer()
             }
         }
     }

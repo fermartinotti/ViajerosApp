@@ -12,7 +12,7 @@ struct NuevoGastoView: View {
     @EnvironmentObject var gastoVM : GastosViewModel
     
     
-    @State var tipoDeGasto : tipoDeGasto
+    //@State var tipoDeGasto : TipoDeGasto
     
     
     var body: some View {
@@ -24,6 +24,6 @@ struct NuevoGastoView: View {
 
 struct NuevoGastoView_Previews: PreviewProvider {
     static var previews: some View {
-        NuevoGastoView(tipoDeGasto: tipoDeGasto.COMPRAS)
+        NuevoGastoView()
     }
 }

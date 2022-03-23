@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum tipoDeGasto: Codable {
+enum TipoDeGasto: Codable {
     
     case COMPRAS
     case ENTRETENIMIENTO
@@ -16,19 +16,21 @@ enum tipoDeGasto: Codable {
     case TRANSPORTE
 }
 
-struct GastosModel: Identifiable, Codable {
+struct GastosModel: Identifiable, Codable, Equatable {
     
     let id: String
-    let nombreGasto: String
-    let fecha: Date
-    let descripcion: String
-    let tipoDeGasto: tipoDeGasto
+    var nombreGasto: String
+    var fecha: Date
+    var descripcion: String
+    var importe: Double
+    var tipoDeGasto: TipoDeGasto
     
-    init(nombreGasto: String, fecha: Date, descripcion: String, tipoDeGasto: tipoDeGasto) {
+    init(nombreGasto: String, fecha: Date, descripcion: String, importe: Double, tipoDeGasto: TipoDeGasto) {
         id = UUID().uuidString
         self.nombreGasto = nombreGasto
         self.fecha = fecha
         self.descripcion = descripcion
+        self.importe = importe
         self.tipoDeGasto = tipoDeGasto
     }
 }

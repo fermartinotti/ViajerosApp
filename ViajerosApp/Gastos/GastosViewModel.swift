@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 class GastosViewModel: ObservableObject {
     
@@ -14,25 +13,51 @@ class GastosViewModel: ObservableObject {
     
     init() {
         //Cargar gastos pa cuando inicie la app
-        misGastos.append(GastosModel(nombreGasto: "Coca Cola", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", tipoDeGasto: tipoDeGasto.COMPRAS))
-        misGastos.append(GastosModel(nombreGasto: "Subte", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", tipoDeGasto: tipoDeGasto.TRANSPORTE))
-        misGastos.append(GastosModel(nombreGasto: "Ibuprofeno", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", tipoDeGasto: tipoDeGasto.SALUD))
-        misGastos.append(GastosModel(nombreGasto: "Entradas cine", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", tipoDeGasto: tipoDeGasto.ENTRETENIMIENTO))
+        misGastos.append(GastosModel(nombreGasto: "Coca Cola", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
+        misGastos.append(GastosModel(nombreGasto: "Subte", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 30.00, tipoDeGasto: TipoDeGasto.TRANSPORTE))
+        misGastos.append(GastosModel(nombreGasto: "Ibuprofeno", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 70.00, tipoDeGasto: TipoDeGasto.SALUD))
+        misGastos.append(GastosModel(nombreGasto: "Entradas cine", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 1000.00, tipoDeGasto: TipoDeGasto.ENTRETENIMIENTO))
     }
     
-    func agregarGasto() {
-        
+    func agregarGasto(nombreGasto: String, fecha: Date, descripcion: String, importe: Double, tipoDeGasto: TipoDeGasto) {
+        let nuevoGasto = GastosModel(nombreGasto: nombreGasto, fecha: fecha, descripcion: descripcion, importe: importe, tipoDeGasto: tipoDeGasto)
+        misGastos.append(nuevoGasto)
+        guardarGastos()
     }
     
-    func eliminarGasto() {
-        
+    func eliminarGasto(gasto: GastosModel) {
+        if let index = misGastos.firstIndex(of: gasto) {
+            misGastos.remove(at: index)
+        }
     }
     
-    func editarGasto() {
+    func editarGasto(_ id: String, nuevoNombreGasto: String, nuevaFecha: Date, nuevaDescripcion: String, nuevoImporte: Double, nuevoTipoDeGasto: TipoDeGasto) {
         
+        let gastoAActualizar = misGastos.firstIndex(where: { $0.id == id})
+        
+        if let posicionGasto = gastoAActualizar {
+            misGastos[posicionGasto].nombreGasto = nuevoNombreGasto
+            misGastos[posicionGasto].fecha = nuevaFecha
+            misGastos[posicionGasto].descripcion = nuevaDescripcion
+            misGastos[posicionGasto].importe = nuevoImporte
+            misGastos[posicionGasto].tipoDeGasto = nuevoTipoDeGasto
+            
+            guardarGastos()
+        }
+    }
+    
+    func guardarGastos() {
+        if let gastosEncoded = try? JSONEncoder().encode(misGastos) {
+            UserDefaults.standard.set(gastosEncoded, forKey: "Gastos")
+        }
     }
     
     func cargarGastos() {
-        
+        if let gastosGuardados = UserDefaults.standard.object(forKey: "Gastos") as? Data {
+            if let gastosDecodificados = try? JSONDecoder().decode([GastosModel].self, from: gastosGuardados) {
+                misGastos = gastosDecodificados
+            }
+        }
     }
+    
 }
