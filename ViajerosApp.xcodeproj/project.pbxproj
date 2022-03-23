@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E021EACB27EA269400B1859A /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E021EACA27EA269400B1859A /* ItemModel.swift */; };
+		E021EACD27EA3D2700B1859A /* EquipajeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E021EACC27EA3D2700B1859A /* EquipajeViewModel.swift */; };
 		E0701D4427E0FDC800567CC2 /* TransporteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0701D4327E0FDC800567CC2 /* TransporteViewModel.swift */; };
 		E0701D4627E0FDD400567CC2 /* TransporteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0701D4527E0FDD400567CC2 /* TransporteModel.swift */; };
 		E0701D4827E1046500567CC2 /* AgregarTransporteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0701D4727E1046500567CC2 /* AgregarTransporteView.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E021EACA27EA269400B1859A /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		E021EACC27EA3D2700B1859A /* EquipajeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipajeViewModel.swift; sourceTree = "<group>"; };
 		E0701D4327E0FDC800567CC2 /* TransporteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransporteViewModel.swift; sourceTree = "<group>"; };
 		E0701D4527E0FDD400567CC2 /* TransporteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransporteModel.swift; sourceTree = "<group>"; };
 		E0701D4727E1046500567CC2 /* AgregarTransporteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarTransporteView.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				E0D560CC27DF7EDB00A270CA /* EquipajeView.swift */,
+				E021EACA27EA269400B1859A /* ItemModel.swift */,
+				E021EACC27EA3D2700B1859A /* EquipajeViewModel.swift */,
 			);
 			path = Equipaje;
 			sourceTree = "<group>";
@@ -202,11 +208,13 @@
 				E0701D4627E0FDD400567CC2 /* TransporteModel.swift in Sources */,
 				E0701D4827E1046500567CC2 /* AgregarTransporteView.swift in Sources */,
 				E0D560CA27DE69C700A270CA /* GastosView.swift in Sources */,
+				E021EACB27EA269400B1859A /* ItemModel.swift in Sources */,
 				E0A6831327DD5A7000A18E5A /* TransporteView.swift in Sources */,
 				E0BBA56127E2B8D900573CEA /* DetalleTransporteView.swift in Sources */,
 				E0EF50EE27DBB8F200DE7194 /* HomeView.swift in Sources */,
 				E0EF50FA27DBC4B200DE7194 /* PrimerViajeView.swift in Sources */,
 				E0EF50EC27DBB8F200DE7194 /* ViajerosAppApp.swift in Sources */,
+				E021EACD27EA3D2700B1859A /* EquipajeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
