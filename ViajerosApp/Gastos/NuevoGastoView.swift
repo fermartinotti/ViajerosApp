@@ -9,21 +9,46 @@ import SwiftUI
 
 struct NuevoGastoView: View {
     
-    @EnvironmentObject var gastoVM : GastosViewModel
+    @State var nombre = ""
+    @State var fecha = Date.now
+    @State var descripcion = ""
+    @State var importe : Double = 0
+    @State var tipoDeGasto : TipoDeGasto = TipoDeGasto.ENTRETENIMIENTO
     
     
-    //@State var tipoDeGasto : TipoDeGasto
-    
+    @EnvironmentObject var gastosVM : GastosViewModel
+    @Environment(\.presentationMode) var pantallaActual
     
     var body: some View {
         VStack {
-            Text("Añadir nuevo gasto")
+            Form {
+                Section(header: Text("Datos del gasto")) {
+                    TextField("Nombre", text: $nombre)
+                    DatePicker("Fecha", selection: $fecha)
+                    TextField("Descripcion", text: $descripcion)
+                    TextField("Importe", value: $importe, formatter: NumberFormatter())
+                }
+            }
+            Button {
+                gastosVM.agregarGasto(nombreGasto: nombre, fecha: fecha, descripcion: descripcion, importe: importe, tipoDeGasto: tipoDeGasto)
+                pantallaActual.wrappedValue.dismiss()
+            } label: {
+                Text("Guardar")
+                    .font(.title3)
+                    .foregroundColor(Color.black)
+                    .padding(.vertical, 14)
+                    .padding(.horizontal, 130)
+                    .background(.blue)
+                    .cornerRadius(15)
+                    .padding(.bottom, 10)
+                    .fixedSize(horizontal: true, vertical: true)
+            }
         }
     }
 }
 
-struct NuevoGastoView_Previews: PreviewProvider {
+/* struct NuevoGastoView_Previews: PreviewProvider {
     static var previews: some View {
         NuevoGastoView()
     }
-}
+} */
