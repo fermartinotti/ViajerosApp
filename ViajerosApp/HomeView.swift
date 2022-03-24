@@ -19,7 +19,7 @@ struct HomeTabView: View {
     init(){
         let appaerance = UITabBarAppearance()
         appaerance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
-        appaerance.backgroundColor = UIColor(Color.white.opacity(0.5))
+        appaerance.backgroundColor = UIColor(Color.white.opacity(0.2))
         
         UITabBar.appearance().standardAppearance = appaerance
         UITabBar.appearance().scrollEdgeAppearance = appaerance
