@@ -23,7 +23,7 @@ struct DetalleGastoView: View {
             Form{
                 Section(header: Text("Datos del gasto")) {
                     TextField("Nombre", text: $nombreGasto)
-                    TextField("Importe", value: $importe, formatter: NumberFormatter())
+                    TextField("$ Importe", value: $importe, formatter: NumberFormatter())
                         .keyboardType(.decimalPad)
                     TextField("Fecha operacion", value: $fechaGasto, formatter: DateFormatter())
                     TextField("Descripcion", text: $descripcion)

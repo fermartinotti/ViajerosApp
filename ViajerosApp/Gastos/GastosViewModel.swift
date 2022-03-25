@@ -16,7 +16,7 @@ class GastosViewModel: ObservableObject {
         misGastos.append(GastosModel(nombreGasto: "Coca Cola", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
         misGastos.append(GastosModel(nombreGasto: "Subte", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 30.00, tipoDeGasto: TipoDeGasto.TRANSPORTE))
         misGastos.append(GastosModel(nombreGasto: "Ibuprofeno", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 70.00, tipoDeGasto: TipoDeGasto.SALUD))
-        misGastos.append(GastosModel(nombreGasto: "Entradas cine", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 1000.00, tipoDeGasto: TipoDeGasto.ENTRETENIMIENTO))
+        misGastos.append(GastosModel(nombreGasto: "Entradas cine", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 10000.00, tipoDeGasto: TipoDeGasto.ENTRETENIMIENTO))
     }
     
     func agregarGasto(nombreGasto: String, fecha: Date, descripcion: String, importe: Double, tipoDeGasto: TipoDeGasto) {

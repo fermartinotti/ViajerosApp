@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TipoDeGasto: Codable {
+enum TipoDeGasto: String, Codable {
     
     case COMPRAS
     case ENTRETENIMIENTO
