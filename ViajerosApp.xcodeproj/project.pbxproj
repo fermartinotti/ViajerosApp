@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		423CBEEA27E28E6C008B546C /* GastosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423CBEE927E28E6C008B546C /* GastosModel.swift */; };
+		423CBEEC27E2904B008B546C /* GastosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423CBEEB27E2904B008B546C /* GastosViewModel.swift */; };
+		423CBEEE27E29D48008B546C /* NuevoGastoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423CBEED27E29D48008B546C /* NuevoGastoView.swift */; };
+		423CBEF027E2A44D008B546C /* DetalleGastoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423CBEEF27E2A44D008B546C /* DetalleGastoView.swift */; };
+		4243580B27EE26BC0000A9A7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4243580A27EE26BC0000A9A7 /* Extensions.swift */; };
+		4243580E27EE29890000A9A7 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 4243580D27EE29890000A9A7 /* SwiftUIFontIcon */; };
 		E0A6831327DD5A7000A18E5A /* TransporteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A6831227DD5A7000A18E5A /* TransporteView.swift */; };
 		E0D560CA27DE69C700A270CA /* GastosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D560C927DE69C700A270CA /* GastosView.swift */; };
 		E0D560CD27DF7EDB00A270CA /* EquipajeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D560CC27DF7EDB00A270CA /* EquipajeView.swift */; };
@@ -19,6 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		423CBEE927E28E6C008B546C /* GastosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GastosModel.swift; sourceTree = "<group>"; };
+		423CBEEB27E2904B008B546C /* GastosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GastosViewModel.swift; sourceTree = "<group>"; };
+		423CBEED27E29D48008B546C /* NuevoGastoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuevoGastoView.swift; sourceTree = "<group>"; };
+		423CBEEF27E2A44D008B546C /* DetalleGastoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleGastoView.swift; sourceTree = "<group>"; };
+		4243580A27EE26BC0000A9A7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E0A6831227DD5A7000A18E5A /* TransporteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransporteView.swift; sourceTree = "<group>"; };
 		E0D560C927DE69C700A270CA /* GastosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GastosView.swift; sourceTree = "<group>"; };
 		E0D560CC27DF7EDB00A270CA /* EquipajeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipajeView.swift; sourceTree = "<group>"; };
@@ -36,12 +47,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4243580E27EE29890000A9A7 /* SwiftUIFontIcon in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4243580927EE26AE0000A9A7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4243580A27EE26BC0000A9A7 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		E0A6831127DD5A5600A18E5A /* Transporte */ = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +74,10 @@
 			isa = PBXGroup;
 			children = (
 				E0D560C927DE69C700A270CA /* GastosView.swift */,
+				423CBEE927E28E6C008B546C /* GastosModel.swift */,
+				423CBEEB27E2904B008B546C /* GastosViewModel.swift */,
+				423CBEED27E29D48008B546C /* NuevoGastoView.swift */,
+				423CBEEF27E2A44D008B546C /* DetalleGastoView.swift */,
 			);
 			path = Gastos;
 			sourceTree = "<group>";
@@ -93,6 +117,7 @@
 		E0EF50EA27DBB8F200DE7194 /* ViajerosApp */ = {
 			isa = PBXGroup;
 			children = (
+				4243580927EE26AE0000A9A7 /* Utils */,
 				E0D560CE27DF7F9000A270CA /* Inicio */,
 				E0D560CB27DF7EC000A270CA /* Equipaje */,
 				E0D560C827DE69B600A270CA /* Gastos */,
@@ -130,6 +155,9 @@
 			dependencies = (
 			);
 			name = ViajerosApp;
+			packageProductDependencies = (
+				4243580D27EE29890000A9A7 /* SwiftUIFontIcon */,
+			);
 			productName = ViajerosApp;
 			productReference = E0EF50E827DBB8F200DE7194 /* ViajerosApp.app */;
 			productType = "com.apple.product-type.application";
@@ -158,6 +186,9 @@
 				Base,
 			);
 			mainGroup = E0EF50DF27DBB8F200DE7194;
+			packageReferences = (
+				4243580C27EE29890000A9A7 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */,
+			);
 			productRefGroup = E0EF50E927DBB8F200DE7194 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -187,10 +218,15 @@
 				E0D560D027DF7FA300A270CA /* InicioView.swift in Sources */,
 				E0D560CD27DF7EDB00A270CA /* EquipajeView.swift in Sources */,
 				E0D560CA27DE69C700A270CA /* GastosView.swift in Sources */,
+				423CBEF027E2A44D008B546C /* DetalleGastoView.swift in Sources */,
 				E0A6831327DD5A7000A18E5A /* TransporteView.swift in Sources */,
 				E0EF50EE27DBB8F200DE7194 /* HomeView.swift in Sources */,
 				E0EF50FA27DBC4B200DE7194 /* PrimerViajeView.swift in Sources */,
+				4243580B27EE26BC0000A9A7 /* Extensions.swift in Sources */,
+				423CBEEC27E2904B008B546C /* GastosViewModel.swift in Sources */,
+				423CBEEA27E28E6C008B546C /* GastosModel.swift in Sources */,
 				E0EF50EC27DBB8F200DE7194 /* ViajerosAppApp.swift in Sources */,
+				423CBEEE27E29D48008B546C /* NuevoGastoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +427,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4243580C27EE29890000A9A7 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huybuidac/SwiftUIFontIcon";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4243580D27EE29890000A9A7 /* SwiftUIFontIcon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4243580C27EE29890000A9A7 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */;
+			productName = SwiftUIFontIcon;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E0EF50E027DBB8F200DE7194 /* Project object */;
 }
