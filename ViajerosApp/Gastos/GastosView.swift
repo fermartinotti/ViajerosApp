@@ -37,35 +37,38 @@ struct GastosView: View {
                             NavigationLink(
                                 destination: DetalleGastoView(nombreGasto: unGasto.nombreGasto, fechaGasto: unGasto.fecha, descripcion: unGasto.descripcion, importe: unGasto.importe, tipoDeGasto: unGasto.tipoDeGasto),
                                 label: {
-                                    RoundedRectangle(cornerRadius: 20, style: .continuous)
-                                        .fill(Color.icon.opacity(0.3))
-                                        .frame(width: 44, height: 44)
-                                        .overlay {
-                                            FontIcon.text(.awesome5Solid(code: .icons), fontsize: 24, color: .blue)
+                                    HStack {
+                                        RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                            .fill(Color.icon.opacity(0.3))
+                                            .frame(width: 44, height: 44)
+                                            .overlay {
+                                                FontIcon.text(.awesome5Solid(code: .icons), fontsize: 24, color: .blue)
                                         }
-                                    VStack(alignment: .leading, spacing: 6) {
-                                        // Nombre gasto
-                                        Text(unGasto.nombreGasto)
-                                            .font(.subheadline)
+                                        VStack(alignment: .leading, spacing: 6) {
+                                            // Nombre gasto
+                                            Text(unGasto.nombreGasto)
+                                                .font(.subheadline)
+                                                .bold()
+                                                .lineLimit(1)
+                                            
+                                            // Tipo de gasto
+                                            Text(unGasto.tipoDeGasto.rawValue)
+                                                .font(.footnote)
+                                                .opacity(0.7)
+                                                .lineLimit(1)
+                                            
+                                            //Fecha
+                                            Text(unGasto.fecha, format: .dateTime.day().month().year())
+                                                .font(.footnote)
+                                                .foregroundColor(.secondary)
+                                        }
+                                        Spacer()
+                                        //Importe
+                                        Text(unGasto.importe, format: .currency(code: "USD"))
                                             .bold()
                                             .lineLimit(1)
-                                        
-                                        // Tipo de gasto
-                                        Text(unGasto.tipoDeGasto.rawValue)
-                                            .font(.footnote)
-                                            .opacity(0.7)
-                                            .lineLimit(1)
-                                        
-                                        //Fecha
-                                        Text(unGasto.fecha, format: .dateTime.day().month().year())
-                                            .font(.footnote)
-                                            .foregroundColor(.secondary)
                                     }
-                                    Spacer()
-                                    //Importe
-                                    Text(unGasto.importe, format: .currency(code: "USD"))
-                                        .bold()
-                                        .lineLimit(1)
+                                    
                                 })
                             .padding([.top, .bottom], 5)
                             .swipeActions(edge: .leading) {
