@@ -14,6 +14,11 @@ class GastosViewModel: ObservableObject {
     init() {
         //Cargar gastos pa cuando inicie la app
         misGastos.append(GastosModel(nombreGasto: "Coca Cola", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
+        misGastos.append(GastosModel(nombreGasto: "Leche", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
+        misGastos.append(GastosModel(nombreGasto: "Pan", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
+        misGastos.append(GastosModel(nombreGasto: "Papas", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
+        misGastos.append(GastosModel(nombreGasto: "Manteca", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
+        misGastos.append(GastosModel(nombreGasto: "Fideos", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
         misGastos.append(GastosModel(nombreGasto: "Subte", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 30.00, tipoDeGasto: TipoDeGasto.TRANSPORTE))
         misGastos.append(GastosModel(nombreGasto: "Ibuprofeno", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 70.00, tipoDeGasto: TipoDeGasto.SALUD))
         misGastos.append(GastosModel(nombreGasto: "Entradas cine", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 10000.00, tipoDeGasto: TipoDeGasto.ENTRETENIMIENTO))

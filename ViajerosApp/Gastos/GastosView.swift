@@ -65,8 +65,9 @@ struct GastosView: View {
                                     //Importe
                                     Text(unGasto.importe, format: .currency(code: "USD"))
                                         .bold()
+                                        .lineLimit(1)
                                 })
-                            .padding([.top, .bottom], 8)
+                            .padding([.top, .bottom], 5)
                             .swipeActions(edge: .leading) {
                                 Button {
                                     gastosVM.eliminarGasto(gasto: unGasto)
