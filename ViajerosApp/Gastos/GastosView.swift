@@ -30,8 +30,10 @@ struct GastosView: View {
                     }
                     Spacer()
                 } else {
+                    //gastosDecodificados.sort{ $0.fecha.compare($1.fecha) == .orderedDescending}
+                    let gastosOrdenados = ordenarGastos(gastosVM.misGastos)
                     List {
-                        ForEach(gastosVM.misGastos) {unGasto in
+                        ForEach(gastosOrdenados) {unGasto in
                             NavigationLink(
                                 destination: DetalleGastoView(id: unGasto.id, nombreGasto: unGasto.nombreGasto, fechaGasto: unGasto.fecha, descripcion: unGasto.descripcion, importe: unGasto.importe, gastoSeleccionado: unGasto.tipoDeGasto),
                                 label: {
@@ -119,3 +121,8 @@ struct GastosView: View {
 //        }
 //    }
 //}
+func ordenarGastos(_ items: [GastosModel]) -> [GastosModel] {
+    items.sorted { itemA, itemB in
+        itemA.fecha > itemB.fecha
+    }
+}
