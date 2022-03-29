@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUIFontIcon
 
-enum TipoDeGasto: String, Codable {
+enum TipoDeGasto: String, Codable, CaseIterable {
     case COMPRAS
     case ENTRETENIMIENTO
     case GASTRONOMIA

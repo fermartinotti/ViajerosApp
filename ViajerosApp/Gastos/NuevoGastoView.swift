@@ -13,11 +13,9 @@ struct NuevoGastoView: View {
     @State var fecha = Date.now
     @State var descripcion = ""
     @State var importe : Double = 0
-    @State var tipoDeGasto : TipoDeGasto = TipoDeGasto.ENTRETENIMIENTO
-    @State var gastoSeleccionado = "ENTRETENIMIENTO"
     
-    var tiposGastos = ["COMPRAS", "ENTRETENIMIENTO", "GASTRONOMIA", "SALUD", "TRANSPORTE"]
-    
+    @State var gastoSeleccionado:TipoDeGasto = TipoDeGasto.ENTRETENIMIENTO
+    var tiposGastos = TipoDeGasto.allCases
     
     @EnvironmentObject var gastosVM : GastosViewModel
     @Environment(\.presentationMode) var pantallaActual
@@ -30,15 +28,15 @@ struct NuevoGastoView: View {
                 TextField("Descripcion", text: $descripcion)
                 TextField("Importe", value: $importe, formatter: NumberFormatter())
                 Picker(selection: $gastoSeleccionado, label: Text("Tipo de gasto")) {
-                    ForEach(tiposGastos, id: \.self) {
-                        Text($0).font(.footnote)
+                    ForEach(tiposGastos, id: \.self) { unTipoDeGasto in
+                        Text(unTipoDeGasto.rawValue).font(.footnote)
                     }
                 }
                 .navigationBarTitle("Nuevo gasto")
                 .padding()
             }
             Button {
-                gastosVM.agregarGasto(nombreGasto: nombre, fecha: fecha, descripcion: descripcion, importe: importe, tipoDeGasto: tipoDeGasto)
+                gastosVM.agregarGasto(nombreGasto: nombre, fecha: fecha, descripcion: descripcion, importe: importe, tipoDeGasto: gastoSeleccionado)
                 pantallaActual.wrappedValue.dismiss()
             } label: {
                 Text("Guardar")
