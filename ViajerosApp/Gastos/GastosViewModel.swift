@@ -39,7 +39,7 @@ class GastosViewModel: ObservableObject {
     func editarGasto(_ id: String, nuevoNombreGasto: String, nuevaFecha: Date, nuevaDescripcion: String, nuevoImporte: Double, nuevoTipoDeGasto: TipoDeGasto) {
         
         let gastoAActualizar = misGastos.firstIndex(where: { $0.id == id})
-        
+        print("Hola llegue a la funcion")
         if let posicionGasto = gastoAActualizar {
             misGastos[posicionGasto].nombreGasto = nuevoNombreGasto
             misGastos[posicionGasto].fecha = nuevaFecha

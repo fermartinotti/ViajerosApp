@@ -20,7 +20,6 @@ struct DetalleGastoView: View {
     @State var gastoSeleccionado:TipoDeGasto = TipoDeGasto.ENTRETENIMIENTO
     
     var tiposGastos = TipoDeGasto.allCases
-    var idAEditar = ""
     
     
     var body: some View{
@@ -42,7 +41,7 @@ struct DetalleGastoView: View {
         }
         
         Button {
-            gastoVM.editarGasto(idAEditar, nuevoNombreGasto: nombreGasto, nuevaFecha: fechaGasto, nuevaDescripcion: descripcion, nuevoImporte: importe, nuevoTipoDeGasto: gastoSeleccionado)
+            gastoVM.editarGasto(id, nuevoNombreGasto: nombreGasto, nuevaFecha: fechaGasto, nuevaDescripcion: descripcion, nuevoImporte: importe, nuevoTipoDeGasto: gastoSeleccionado)
             pantallaActual.wrappedValue.dismiss()
         } label: {
             Text("Guardar")
