@@ -14,7 +14,7 @@ class GastosViewModel: ObservableObject {
     init() {
         //Cargar gastos pa cuando inicie la app
         misGastos.append(GastosModel(nombreGasto: "Coca Cola", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
-        misGastos.append(GastosModel(nombreGasto: "Leche", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
+        misGastos.append(GastosModel(nombreGasto: "Leche", fecha: Date.now.addingTimeInterval(86400), descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
         misGastos.append(GastosModel(nombreGasto: "Pan", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
         misGastos.append(GastosModel(nombreGasto: "Papas", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.GASTRONOMIA))
         misGastos.append(GastosModel(nombreGasto: "Manteca", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
@@ -59,7 +59,8 @@ class GastosViewModel: ObservableObject {
     
     func cargarGastos() {
         if let gastosGuardados = UserDefaults.standard.object(forKey: "Gastos") as? Data {
-            if let gastosDecodificados = try? JSONDecoder().decode([GastosModel].self, from: gastosGuardados) {
+            if var gastosDecodificados = try? JSONDecoder().decode([GastosModel].self, from: gastosGuardados) {
+                gastosDecodificados.sort{ $0.fecha.compare($1.fecha) == .orderedDescending}
                 misGastos = gastosDecodificados
             }
         }

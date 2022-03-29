@@ -25,25 +25,11 @@ struct GastosView: View {
                             .resizable().frame(width: 200, height: 200)
                     }
                 } else {
-                    HStack{
-                        Text("Mis gastos")
-                            .bold()
-                            .font(.title)
-                            .navigationBarTitle("")
-                            .navigationBarHidden(true)
-                        
-                        Spacer()
-                        
-                        NavigationLink(
-                            destination: NuevoGastoView(),
-                            label: {
-                                Image("add_expenses").padding()
-                        })
-                    }
+
                     List {
                         ForEach(gastosVM.misGastos) {unGasto in
                             NavigationLink(
-                                destination: DetalleGastoView(nombreGasto: unGasto.nombreGasto, fechaGasto: unGasto.fecha, descripcion: unGasto.descripcion, importe: unGasto.importe, tipoDeGasto: unGasto.tipoDeGasto),
+                                destination: DetalleGastoView(id: unGasto.id, nombreGasto: unGasto.nombreGasto, fechaGasto: unGasto.fecha, descripcion: unGasto.descripcion, importe: unGasto.importe, gastoSeleccionado: unGasto.tipoDeGasto),
                                 label: {
                                     HStack {
                                         RoundedRectangle(cornerRadius: 20, style: .continuous)
@@ -90,6 +76,16 @@ struct GastosView: View {
                                     }
                                     
                                 })
+                            .navigationBarTitle(Text("Mis gastos"))
+                            .toolbar(content: {
+                                NavigationLink(
+                                    destination: NuevoGastoView(),
+                                    label: {
+                                        Image("add_expenses")
+                                            .resizable()
+                                            .frame(width: 30, height: 30)
+                                })
+                            })
                             .padding([.top, .bottom], 5)
                             .swipeActions(edge: .leading) {
                                 Button {

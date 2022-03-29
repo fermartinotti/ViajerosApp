@@ -24,7 +24,7 @@ struct NuevoGastoView: View {
         VStack {
             Form {
                 TextField("Nombre", text: $nombre)
-                DatePicker("Fecha", selection: $fecha)
+                DatePicker("Fecha", selection: $fecha, displayedComponents: .date)
                 TextField("Descripcion", text: $descripcion)
                 TextField("Importe", value: $importe, formatter: NumberFormatter())
                 Picker(selection: $gastoSeleccionado, label: Text("Tipo de gasto")) {
