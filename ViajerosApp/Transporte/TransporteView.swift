@@ -20,20 +20,6 @@ struct TransporteView: View {
             VStack {
                 //INICIA header
                 HStack{
-                    Text("Mis Transportes")
-                        .bold()
-                        .padding()
-                        .font(.title)
-                    Spacer()
-                    Menu{
-                        Button("Avion", action: { irACrearAvion = true})
-                        Button("Barco", action: { irACrearBarco = true})
-                        Button("Tren", action: { irACrearTren = true})
-                    }
-                    label:{
-                        Image("addTicket").padding()
-                    }
-                    
                     NavigationLink(isActive: $irACrearBarco,
                                    destination: {AgregarTransporteView(tipoDeViaje: TipoDeViaje.BARCO)},
                                    label: {
@@ -79,8 +65,8 @@ struct TransporteView: View {
                                 Button {
                                     transporteVM.borrarTransporte(transporte: unTransporte)
                                 }label:{
-                                    Image("delete")
-                                }
+                                    Image(systemName: "trash")
+                                }.tint(.red)
                             }
                             .listRowInsets(EdgeInsets())
                         }
@@ -90,8 +76,20 @@ struct TransporteView: View {
                 Spacer()
                 
             }
-            .navigationBarTitle("")
-            .navigationBarHidden(true)
+            .navigationBarTitle("Mis Transportes", displayMode: .inline)
+            .toolbar(content: {
+                Menu{
+                    Button("Avion", action: { irACrearAvion = true})
+                    Button("Barco", action: { irACrearBarco = true})
+                    Button("Tren", action: { irACrearTren = true})
+                }
+                label:{
+                    Image(systemName: "plus.circle.fill")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(Color("CelesteCustom"))
+                }
+            })
         }
         .environmentObject(transporteVM)
     }
@@ -138,8 +136,8 @@ struct Card: View {
     }
 }
 
-struct TransporteView_Previews: PreviewProvider {
-    static var previews: some View {
-        TransporteView()
-    }
-}
+//struct TransporteView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TransporteView()
+//    }
+//}

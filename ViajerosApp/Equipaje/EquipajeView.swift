@@ -24,6 +24,7 @@ struct EquipajeView: View {
                         Stepper(value: $cantidadNueva,
                                         in: 1...100,
                                         label: { })
+                        .tint(Color("CelesteCustom"))
                     }.padding()
                     
                         Button(action: {
@@ -34,10 +35,10 @@ struct EquipajeView: View {
                             Text("Agregar")
                                 .font(.title3)
                                 .bold()
-                                .foregroundColor(Color.black)
+                                .foregroundColor(Color.white)
                                 .padding(.vertical, 6)
                                 .padding(.horizontal, 140)
-                                .background(.green)
+                                .background(Color("CelesteCustom"))
                                 .cornerRadius(10)
                                 .padding(.bottom, 10)
                                 .fixedSize(horizontal: true, vertical: true)
@@ -78,7 +79,7 @@ struct EquipajeView: View {
                 }.listStyle(PlainListStyle())
                 //fin list
             }
-            .navigationBarTitle("Mi Equipaje")
+            .navigationBarTitle("Mi Equipaje", displayMode: .inline)
         }
         .environmentObject(equipajeVM)
     }

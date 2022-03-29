@@ -16,6 +16,12 @@
 		E0701D4827E1046500567CC2 /* AgregarTransporteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0701D4727E1046500567CC2 /* AgregarTransporteView.swift */; };
 		E0A6831327DD5A7000A18E5A /* TransporteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A6831227DD5A7000A18E5A /* TransporteView.swift */; };
 		E0BBA56127E2B8D900573CEA /* DetalleTransporteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BBA56027E2B8D900573CEA /* DetalleTransporteView.swift */; };
+		E0D21FE127F3949C006CFC86 /* GastosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D21FDD27F3949C006CFC86 /* GastosModel.swift */; };
+		E0D21FE227F3949C006CFC86 /* DetalleGastoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D21FDE27F3949C006CFC86 /* DetalleGastoView.swift */; };
+		E0D21FE327F3949C006CFC86 /* NuevoGastoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D21FDF27F3949C006CFC86 /* NuevoGastoView.swift */; };
+		E0D21FE427F3949C006CFC86 /* GastosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D21FE027F3949C006CFC86 /* GastosViewModel.swift */; };
+		E0D21FE627F394A8006CFC86 /* Utils in Resources */ = {isa = PBXBuildFile; fileRef = E0D21FE527F394A8006CFC86 /* Utils */; };
+		E0D21FE927F39547006CFC86 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = E0D21FE827F39547006CFC86 /* SwiftUIFontIcon */; };
 		E0D560CA27DE69C700A270CA /* GastosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D560C927DE69C700A270CA /* GastosView.swift */; };
 		E0D560CD27DF7EDB00A270CA /* EquipajeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D560CC27DF7EDB00A270CA /* EquipajeView.swift */; };
 		E0D560D027DF7FA300A270CA /* InicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D560CF27DF7FA300A270CA /* InicioView.swift */; };
@@ -36,6 +42,11 @@
 		E0701D4727E1046500567CC2 /* AgregarTransporteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarTransporteView.swift; sourceTree = "<group>"; };
 		E0A6831227DD5A7000A18E5A /* TransporteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransporteView.swift; sourceTree = "<group>"; };
 		E0BBA56027E2B8D900573CEA /* DetalleTransporteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleTransporteView.swift; sourceTree = "<group>"; };
+		E0D21FDD27F3949C006CFC86 /* GastosModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GastosModel.swift; sourceTree = "<group>"; };
+		E0D21FDE27F3949C006CFC86 /* DetalleGastoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalleGastoView.swift; sourceTree = "<group>"; };
+		E0D21FDF27F3949C006CFC86 /* NuevoGastoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NuevoGastoView.swift; sourceTree = "<group>"; };
+		E0D21FE027F3949C006CFC86 /* GastosViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GastosViewModel.swift; sourceTree = "<group>"; };
+		E0D21FE527F394A8006CFC86 /* Utils */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Utils; path = ViajerosApp/Utils; sourceTree = SOURCE_ROOT; };
 		E0D560C927DE69C700A270CA /* GastosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GastosView.swift; sourceTree = "<group>"; };
 		E0D560CC27DF7EDB00A270CA /* EquipajeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipajeView.swift; sourceTree = "<group>"; };
 		E0D560CF27DF7FA300A270CA /* InicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioView.swift; sourceTree = "<group>"; };
@@ -52,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0D21FE927F39547006CFC86 /* SwiftUIFontIcon in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +86,10 @@
 			isa = PBXGroup;
 			children = (
 				E0D560C927DE69C700A270CA /* GastosView.swift */,
+				E0D21FDE27F3949C006CFC86 /* DetalleGastoView.swift */,
+				E0D21FDD27F3949C006CFC86 /* GastosModel.swift */,
+				E0D21FE027F3949C006CFC86 /* GastosViewModel.swift */,
+				E0D21FDF27F3949C006CFC86 /* NuevoGastoView.swift */,
 			);
 			path = Gastos;
 			sourceTree = "<group>";
@@ -121,6 +137,7 @@
 				E0D560CB27DF7EC000A270CA /* Equipaje */,
 				E0D560C827DE69B600A270CA /* Gastos */,
 				E0A6831127DD5A5600A18E5A /* Transporte */,
+				E0D21FE527F394A8006CFC86 /* Utils */,
 				E0EF50EB27DBB8F200DE7194 /* ViajerosAppApp.swift */,
 				E0EF50ED27DBB8F200DE7194 /* HomeView.swift */,
 				E0EF50F927DBC4B200DE7194 /* PrimerViajeView.swift */,
@@ -154,6 +171,9 @@
 			dependencies = (
 			);
 			name = ViajerosApp;
+			packageProductDependencies = (
+				E0D21FE827F39547006CFC86 /* SwiftUIFontIcon */,
+			);
 			productName = ViajerosApp;
 			productReference = E0EF50E827DBB8F200DE7194 /* ViajerosApp.app */;
 			productType = "com.apple.product-type.application";
@@ -182,6 +202,9 @@
 				Base,
 			);
 			mainGroup = E0EF50DF27DBB8F200DE7194;
+			packageReferences = (
+				E0D21FE727F39547006CFC86 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */,
+			);
 			productRefGroup = E0EF50E927DBB8F200DE7194 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -196,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0D21FE627F394A8006CFC86 /* Utils in Resources */,
 				E0EF50F327DBB8F400DE7194 /* Preview Assets.xcassets in Resources */,
 				E0EF50F027DBB8F400DE7194 /* Assets.xcassets in Resources */,
 			);
@@ -211,6 +235,7 @@
 				E0D560D027DF7FA300A270CA /* InicioView.swift in Sources */,
 				E0D560CD27DF7EDB00A270CA /* EquipajeView.swift in Sources */,
 				E0701D4427E0FDC800567CC2 /* TransporteViewModel.swift in Sources */,
+				E0D21FE427F3949C006CFC86 /* GastosViewModel.swift in Sources */,
 				E0701D4627E0FDD400567CC2 /* TransporteModel.swift in Sources */,
 				E0701D4827E1046500567CC2 /* AgregarTransporteView.swift in Sources */,
 				E0D560CA27DE69C700A270CA /* GastosView.swift in Sources */,
@@ -221,7 +246,10 @@
 				E0EF50EE27DBB8F200DE7194 /* HomeView.swift in Sources */,
 				E021EAD127EBE9B500B1859A /* InicioModel.swift in Sources */,
 				E0EF50FA27DBC4B200DE7194 /* PrimerViajeView.swift in Sources */,
+				E0D21FE227F3949C006CFC86 /* DetalleGastoView.swift in Sources */,
 				E0EF50EC27DBB8F200DE7194 /* ViajerosAppApp.swift in Sources */,
+				E0D21FE327F3949C006CFC86 /* NuevoGastoView.swift in Sources */,
+				E0D21FE127F3949C006CFC86 /* GastosModel.swift in Sources */,
 				E021EACD27EA3D2700B1859A /* EquipajeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +451,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E0D21FE727F39547006CFC86 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huybuidac/SwiftUIFontIcon";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E0D21FE827F39547006CFC86 /* SwiftUIFontIcon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0D21FE727F39547006CFC86 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */;
+			productName = SwiftUIFontIcon;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E0EF50E027DBB8F200DE7194 /* Project object */;
 }
