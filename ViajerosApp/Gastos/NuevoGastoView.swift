@@ -27,6 +27,7 @@ struct NuevoGastoView: View {
                 DatePicker("Fecha", selection: $fecha, displayedComponents: .date)
                 TextField("Descripcion", text: $descripcion)
                 TextField("Importe", value: $importe, formatter: NumberFormatter())
+                    .keyboardType(.decimalPad)
                 Picker(selection: $gastoSeleccionado, label: Text("Tipo de gasto")) {
                     ForEach(tiposGastos, id: \.self) { unTipoDeGasto in
                         Text(unTipoDeGasto.rawValue).font(.footnote)
@@ -48,7 +49,7 @@ struct NuevoGastoView: View {
                     .cornerRadius(15)
                     .padding(.bottom, 10)
                     .fixedSize(horizontal: true, vertical: true)
-            }
+            }.disabled(self.importe != 0.0)
         }
     }
 }
