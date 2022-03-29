@@ -19,6 +19,7 @@ struct HomeTabView: View {
     init(){
         let appaerance = UITabBarAppearance()
         appaerance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+        //appaerance.backgroundColor = UIColor(Color("CelesteCustom"))
         appaerance.backgroundColor = UIColor(Color.white.opacity(0.2))
         
         UITabBar.appearance().standardAppearance = appaerance
