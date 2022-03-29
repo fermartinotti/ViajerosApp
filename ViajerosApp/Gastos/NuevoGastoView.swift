@@ -49,7 +49,7 @@ struct NuevoGastoView: View {
                     .cornerRadius(15)
                     .padding(.bottom, 10)
                     .fixedSize(horizontal: true, vertical: true)
-            }
+            }.disabled(self.importe != 0.0)
         }
     }
 }
