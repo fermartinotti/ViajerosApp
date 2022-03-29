@@ -6,9 +6,9 @@
 //
 
 import Foundation
+import SwiftUIFontIcon
 
 enum TipoDeGasto: String, Codable {
-    
     case COMPRAS
     case ENTRETENIMIENTO
     case GASTRONOMIA

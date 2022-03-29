@@ -31,6 +31,14 @@ struct GastosView: View {
                             .font(.title)
                             .navigationBarTitle("")
                             .navigationBarHidden(true)
+                        
+                        Spacer()
+                        
+                        NavigationLink(
+                            destination: NuevoGastoView(),
+                            label: {
+                                Image("add_expenses").padding()
+                        })
                     }
                     List {
                         ForEach(gastosVM.misGastos) {unGasto in
@@ -39,10 +47,22 @@ struct GastosView: View {
                                 label: {
                                     HStack {
                                         RoundedRectangle(cornerRadius: 20, style: .continuous)
-                                            .fill(Color.icon.opacity(0.3))
+                                            .fill(Color.indigo.opacity(0.1))
                                             .frame(width: 44, height: 44)
                                             .overlay {
-                                                FontIcon.text(.awesome5Solid(code: .icons), fontsize: 24, color: .blue)
+                                                //FontIcon.text(.awesome5Solid(code: .icons), fontsize: 24, color: .blue)
+                                                switch unGasto.tipoDeGasto {
+                                                    case .COMPRAS:
+                                                    FontIcon.text(.awesome5Solid(code: .shopping_cart), fontsize: 24, color: .blue)
+                                                case .ENTRETENIMIENTO:
+                                                    FontIcon.text(.awesome5Solid(code: .film), fontsize: 24, color: .blue)
+                                                case .GASTRONOMIA:
+                                                    FontIcon.text(.awesome5Solid(code: .hamburger), fontsize: 24, color: .blue)
+                                                case .SALUD:
+                                                    FontIcon.text(.awesome5Solid(code: .heart), fontsize: 24, color: .blue)
+                                                case .TRANSPORTE:
+                                                    FontIcon.text(.awesome5Solid(code: .bus), fontsize: 24, color: .blue)
+                                                }
                                         }
                                         VStack(alignment: .leading, spacing: 6) {
                                             // Nombre gasto
@@ -81,12 +101,6 @@ struct GastosView: View {
                             }
                         }
                     }
-                    NavigationLink(
-                        destination: NuevoGastoView(),
-                        label: {
-                            Image("add_expenses")
-                    })
-                    Spacer()
                 }
             }
         }
@@ -97,6 +111,10 @@ struct GastosView: View {
 
  struct GastosView_Previews: PreviewProvider {
     static var previews: some View {
-        GastosView()
+        Group {
+            GastosView()
+            GastosView()
+                .preferredColorScheme(.dark)
+        }
     }
-} 
+}

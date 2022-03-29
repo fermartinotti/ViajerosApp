@@ -10,6 +10,7 @@ import SwiftUI
 struct DetalleGastoView: View {
     
     @EnvironmentObject var gastoVM : GastosViewModel
+    @Environment(\.presentationMode) var pantallaActual
     
     @State var nombreGasto: String = ""
     @State var fechaGasto: Date = Date.now
@@ -17,19 +18,42 @@ struct DetalleGastoView: View {
     @State var importe: Double = 0.0
     @State var tipoDeGasto: TipoDeGasto = TipoDeGasto.ENTRETENIMIENTO
     
+    var idAEditar = ""
+    var tiposGastos = ["COMPRAS", "ENTRETENIMIENTO", "GASTRONOMIA", "SALUD", "TRANSPORTE"]
+    
     
     var body: some View{
         VStack {
             Form{
                 Section(header: Text("Datos del gasto")) {
                     TextField("Nombre", text: $nombreGasto)
-                    TextField("$ Importe", value: $importe, formatter: NumberFormatter())
+                    DatePicker("Fecha", selection: $fechaGasto)
                         .keyboardType(.decimalPad)
                     TextField("Fecha operacion", value: $fechaGasto, formatter: DateFormatter())
                     TextField("Descripcion", text: $descripcion)
+                    Picker(selection: $tipoDeGasto, label: Text("Tipo de gasto")) {
+                        ForEach(0..<tiposGastos.count) {
+                            Text(self.tiposGastos[$0])
+                        }
+                    }
                 }
             }
-            .frame(height: 200)
+            .navigationBarTitle("Editar gasto")
+        }
+        
+        Button {
+            gastoVM.editarGasto(idAEditar, nuevoNombreGasto: nombreGasto, nuevaFecha: fechaGasto, nuevaDescripcion: descripcion, nuevoImporte: importe, nuevoTipoDeGasto: tipoDeGasto)
+            pantallaActual.wrappedValue.dismiss()
+        } label: {
+            Text("Guardar")
+                .font(.title3)
+                .foregroundColor(Color.black)
+                .padding(.vertical, 14)
+                .padding(.horizontal, 130)
+                .background(.blue)
+                .cornerRadius(15)
+                .padding(.bottom, 10)
+                .fixedSize(horizontal: true, vertical: true)
         }
     }
 }

@@ -16,7 +16,7 @@ class GastosViewModel: ObservableObject {
         misGastos.append(GastosModel(nombreGasto: "Coca Cola", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
         misGastos.append(GastosModel(nombreGasto: "Leche", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
         misGastos.append(GastosModel(nombreGasto: "Pan", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
-        misGastos.append(GastosModel(nombreGasto: "Papas", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
+        misGastos.append(GastosModel(nombreGasto: "Papas", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.GASTRONOMIA))
         misGastos.append(GastosModel(nombreGasto: "Manteca", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
         misGastos.append(GastosModel(nombreGasto: "Fideos", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 100.00, tipoDeGasto: TipoDeGasto.COMPRAS))
         misGastos.append(GastosModel(nombreGasto: "Subte", fecha: Date.now, descripcion: "Esto es un descripcion del gasto", importe: 30.00, tipoDeGasto: TipoDeGasto.TRANSPORTE))

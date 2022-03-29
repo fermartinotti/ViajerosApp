@@ -14,7 +14,7 @@ struct NuevoGastoView: View {
     @State var descripcion = ""
     @State var importe : Double = 0
     @State var tipoDeGasto : TipoDeGasto = TipoDeGasto.ENTRETENIMIENTO
-    @State var tipoGastoIndex = 0
+    @State var gastoSeleccionado = "ENTRETENIMIENTO"
     
     var tiposGastos = ["COMPRAS", "ENTRETENIMIENTO", "GASTRONOMIA", "SALUD", "TRANSPORTE"]
     
@@ -25,17 +25,17 @@ struct NuevoGastoView: View {
     var body: some View {
         VStack {
             Form {
-                Section(header: Text("Datos del gasto")) {
-                    TextField("Nombre", text: $nombre)
-                    DatePicker("Fecha", selection: $fecha)
-                    TextField("Descripcion", text: $descripcion)
-                    TextField("Importe", value: $importe, formatter: NumberFormatter())
-                    Picker(selection: $tipoGastoIndex, label: Text("Tipo de gasto")) {
-                        ForEach(0..<tiposGastos.count) {
-                            Text(self.tiposGastos[$0])
-                        }
+                TextField("Nombre", text: $nombre)
+                DatePicker("Fecha", selection: $fecha)
+                TextField("Descripcion", text: $descripcion)
+                TextField("Importe", value: $importe, formatter: NumberFormatter())
+                Picker(selection: $gastoSeleccionado, label: Text("Tipo de gasto")) {
+                    ForEach(tiposGastos, id: \.self) {
+                        Text($0).font(.footnote)
                     }
-                }.padding()
+                }
+                .navigationBarTitle("Nuevo gasto")
+                .padding()
             }
             Button {
                 gastosVM.agregarGasto(nombreGasto: nombre, fecha: fecha, descripcion: descripcion, importe: importe, tipoDeGasto: tipoDeGasto)
