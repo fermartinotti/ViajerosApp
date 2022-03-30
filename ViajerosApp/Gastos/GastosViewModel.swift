@@ -19,15 +19,37 @@ class GastosViewModel: ObservableObject {
         getAllExpenses()
     }
     
-    func agregarGasto(nombreGasto: String, fecha: Date, descripcion: String, importe: Double, tipoDeGasto: TipoDeGasto) {
+//    func agregarGasto(nombreGasto: String, fecha: Date, descripcion: String, importe: Double, tipoDeGasto: TipoDeGasto) {
+//        let nuevoGasto = GastosModel(nombreGasto: nombreGasto, fecha: fecha, descripcion: descripcion, importe: importe, tipoDeGasto: tipoDeGasto)
+//        misGastos.append(nuevoGasto)
+//        guardarGastos()
+//    }
+    
+    func createExpense(nombreGasto: String, fecha: Date, descripcion: String, importe: Double, tipoDeGasto: TipoDeGasto) {
         let nuevoGasto = GastosModel(nombreGasto: nombreGasto, fecha: fecha, descripcion: descripcion, importe: importe, tipoDeGasto: tipoDeGasto)
-        misGastos.append(nuevoGasto)
-        guardarGastos()
+        do {
+            _ = try database.collection("gastos").addDocument(from: nuevoGasto)
+        } catch {
+            print("No se pudo crear un nuevo gasto. \(error)")
+        }
     }
     
-    func eliminarGasto(gasto: GastosModel) {
-        if let index = misGastos.firstIndex(of: gasto) {
-            misGastos.remove(at: index)
+    func deleteExpense(_ gastoAEliminar: GastosModel) {
+        database.collection("gastos").document(gastoAEliminar.id!).delete()
+    }
+//
+//    func eliminarGasto(gasto: GastosModel) {
+//        if let index = misGastos.firstIndex(of: gasto) {
+//            misGastos.remove(at: index)
+//        }
+//    }
+    
+    func editExpense(_ id: String, nuevoNombreGasto: String, nuevaFecha: Date, nuevaDescripcion: String, nuevoImporte: Double, nuevoTipoDeGasto: TipoDeGasto) {
+        var gastoModificar = GastosModel(nombreGasto: nuevoNombreGasto, fecha: nuevaFecha, descripcion: nuevaDescripcion, importe: nuevoImporte, tipoDeGasto: nuevoTipoDeGasto)
+        do {
+            try database.collection("gastos").document(id).setData(from: gastoModificar)
+        } catch {
+            print("No se pudo editar el gasto. \(error)")
         }
     }
     
@@ -49,14 +71,6 @@ class GastosViewModel: ObservableObject {
     func guardarGastos() {
         if let gastosEncoded = try? JSONEncoder().encode(misGastos) {
             UserDefaults.standard.set(gastosEncoded, forKey: "Gastos")
-        }
-    }
-    
-    func cargarGastos() {
-        if let gastosGuardados = UserDefaults.standard.object(forKey: "Gastos") as? Data {
-            if var gastosDecodificados = try? JSONDecoder().decode([GastosModel].self, from: gastosGuardados) {
-                misGastos = gastosDecodificados
-            }
         }
     }
     

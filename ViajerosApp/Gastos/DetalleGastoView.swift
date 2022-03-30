@@ -42,7 +42,7 @@ struct DetalleGastoView: View {
         }
         
         Button {
-            gastoVM.editarGasto(id, nuevoNombreGasto: nombreGasto, nuevaFecha: fechaGasto, nuevaDescripcion: descripcion, nuevoImporte: importe, nuevoTipoDeGasto: gastoSeleccionado)
+            gastoVM.editExpense(id, nuevoNombreGasto: nombreGasto, nuevaFecha: fechaGasto, nuevaDescripcion: descripcion, nuevoImporte: importe, nuevoTipoDeGasto: gastoSeleccionado)
             pantallaActual.wrappedValue.dismiss()
         } label: {
             Text("Guardar")

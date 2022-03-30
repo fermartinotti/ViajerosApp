@@ -85,7 +85,7 @@ struct GastosView: View {
                             //.padding([.top, .bottom], 5)
                             .swipeActions(edge: .leading) {
                                 Button {
-                                    gastosVM.eliminarGasto(gasto: unGasto)
+                                    gastosVM.deleteExpense(unGasto)
                                 } label: {
                                     Image(systemName: "trash")
                                 }

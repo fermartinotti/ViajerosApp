@@ -37,7 +37,7 @@ struct NuevoGastoView: View {
                 .padding()
             }
             Button {
-                gastosVM.agregarGasto(nombreGasto: nombre, fecha: fecha, descripcion: descripcion, importe: importe, tipoDeGasto: gastoSeleccionado)
+                gastosVM.createExpense(nombreGasto: nombre, fecha: fecha, descripcion: descripcion, importe: importe, tipoDeGasto: gastoSeleccionado)
                 pantallaActual.wrappedValue.dismiss()
             } label: {
                 Text("Guardar")
@@ -49,7 +49,7 @@ struct NuevoGastoView: View {
                     .cornerRadius(15)
                     .padding(.bottom, 10)
                     .fixedSize(horizontal: true, vertical: true)
-            }.disabled(self.importe != 0.0)
+            }.disabled(self.importe == 0.0 && self.nombre == "")
         }
     }
 }
