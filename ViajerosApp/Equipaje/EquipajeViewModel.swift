@@ -6,28 +6,28 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
+import FirebaseFirestore
 
 class EquipajeViewModel : ObservableObject {
     
     @Published var misItems:[itemModel] = []
+    private var db = Firestore.firestore()
     
     init (){
-        //var itemUno=itemModel(descripcion: "Remeras", cantidad: 5)
-        //misItems.append(itemUno)
-        //cargar lista de items.
     }
     
     func agregarItem(descripcion:String, cantidad:Int){
         let nuevoItem = itemModel(descripcion: descripcion, cantidad: cantidad)
         misItems.append(nuevoItem)
     }
-    
+
     func borrarItem(item:itemModel){
         if let index = misItems.firstIndex(of: item){
             misItems.remove(at: index)
         }
     }
-    
+
     func marcarItem(item:itemModel, resultado:Bool){
         let posicionAActualizar=misItems.firstIndex(of: item)
             if let posicion=posicionAActualizar{

@@ -28,6 +28,8 @@
 		E0D21FF227F48264006CFC86 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E0D21FF127F48264006CFC86 /* FirebaseAuth */; };
 		E0D21FF427F48264006CFC86 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E0D21FF327F48264006CFC86 /* FirebaseDatabase */; };
 		E0D21FF627F48264006CFC86 /* FirebaseDatabaseSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = E0D21FF527F48264006CFC86 /* FirebaseDatabaseSwift-Beta */; };
+		E0D21FF927F49610006CFC86 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E0D21FF827F49610006CFC86 /* FirebaseFirestore */; };
+		E0D21FFB27F49610006CFC86 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = E0D21FFA27F49610006CFC86 /* FirebaseFirestoreSwift-Beta */; };
 		E0D560CA27DE69C700A270CA /* GastosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D560C927DE69C700A270CA /* GastosView.swift */; };
 		E0D560CD27DF7EDB00A270CA /* EquipajeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D560CC27DF7EDB00A270CA /* EquipajeView.swift */; };
 		E0D560D027DF7FA300A270CA /* InicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D560CF27DF7FA300A270CA /* InicioView.swift */; };
@@ -75,7 +77,9 @@
 				E0D21FF027F48264006CFC86 /* FirebaseAnalyticsSwift-Beta in Frameworks */,
 				E0D21FEE27F48264006CFC86 /* FirebaseAnalytics in Frameworks */,
 				E0D21FE927F39547006CFC86 /* SwiftUIFontIcon in Frameworks */,
+				E0D21FFB27F49610006CFC86 /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				E0D21FF227F48264006CFC86 /* FirebaseAuth in Frameworks */,
+				E0D21FF927F49610006CFC86 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +96,13 @@
 				E0BBA56027E2B8D900573CEA /* DetalleTransporteView.swift */,
 			);
 			path = Transporte;
+			sourceTree = "<group>";
+		};
+		E0D21FF727F49610006CFC86 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E0D560C827DE69B600A270CA /* Gastos */ = {
@@ -131,6 +142,7 @@
 			children = (
 				E0EF50EA27DBB8F200DE7194 /* ViajerosApp */,
 				E0EF50E927DBB8F200DE7194 /* Products */,
+				E0D21FF727F49610006CFC86 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,6 +203,8 @@
 				E0D21FF127F48264006CFC86 /* FirebaseAuth */,
 				E0D21FF327F48264006CFC86 /* FirebaseDatabase */,
 				E0D21FF527F48264006CFC86 /* FirebaseDatabaseSwift-Beta */,
+				E0D21FF827F49610006CFC86 /* FirebaseFirestore */,
+				E0D21FFA27F49610006CFC86 /* FirebaseFirestoreSwift-Beta */,
 			);
 			productName = ViajerosApp;
 			productReference = E0EF50E827DBB8F200DE7194 /* ViajerosApp.app */;
@@ -521,6 +535,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E0D21FEC27F48264006CFC86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseDatabaseSwift-Beta";
+		};
+		E0D21FF827F49610006CFC86 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0D21FEC27F48264006CFC86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		E0D21FFA27F49610006CFC86 /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0D21FEC27F48264006CFC86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
