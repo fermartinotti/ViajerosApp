@@ -7,6 +7,8 @@
 
 import Foundation
 import SwiftUIFontIcon
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 enum TipoDeGasto: String, Codable, CaseIterable {
     case COMPRAS
@@ -18,7 +20,7 @@ enum TipoDeGasto: String, Codable, CaseIterable {
 
 struct GastosModel: Identifiable, Codable, Equatable {
     
-    let id: String
+    @DocumentID var id: String?
     var nombreGasto: String
     var fecha: Date
     var descripcion: String
@@ -26,7 +28,6 @@ struct GastosModel: Identifiable, Codable, Equatable {
     var tipoDeGasto: TipoDeGasto
     
     init(nombreGasto: String, fecha: Date, descripcion: String, importe: Double, tipoDeGasto: TipoDeGasto) {
-        id = UUID().uuidString
         self.nombreGasto = nombreGasto
         self.fecha = fecha
         self.descripcion = descripcion

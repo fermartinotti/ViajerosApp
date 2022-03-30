@@ -35,7 +35,7 @@ struct GastosView: View {
                     List {
                         ForEach(gastosOrdenados) {unGasto in
                             NavigationLink(
-                                destination: DetalleGastoView(id: unGasto.id, nombreGasto: unGasto.nombreGasto, fechaGasto: unGasto.fecha, descripcion: unGasto.descripcion, importe: unGasto.importe, gastoSeleccionado: unGasto.tipoDeGasto),
+                                destination: DetalleGastoView(id: (unGasto.id)!, nombreGasto: unGasto.nombreGasto, fechaGasto: unGasto.fecha, descripcion: unGasto.descripcion, importe: unGasto.importe, gastoSeleccionado: unGasto.tipoDeGasto),
                                 label: {
                                     HStack {
                                         RoundedRectangle(cornerRadius: 20, style: .continuous)

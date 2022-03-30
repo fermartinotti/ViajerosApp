@@ -7,12 +7,16 @@
 
 import Foundation
 
+import FirebaseFirestoreSwift
+import FirebaseFirestore
+
 class GastosViewModel: ObservableObject {
     
     @Published var misGastos : [GastosModel] = []
+    private var database = Firestore.firestore()
     
     init() {
-        cargarGastos()
+        getAllExpenses()
     }
     
     func agregarGasto(nombreGasto: String, fecha: Date, descripcion: String, importe: Double, tipoDeGasto: TipoDeGasto) {
@@ -56,4 +60,15 @@ class GastosViewModel: ObservableObject {
         }
     }
     
+    func getAllExpenses() {
+        database.collection("gastos")
+            .addSnapshotListener{ query, error in
+                if let error = error {
+                    print("Ocurrio un error al acceder. \(error)")
+                    return
+                }
+                print("Lectura realizada correctamente")
+                self.misGastos = query?.documents.map{ try! $0.data(as: GastosModel.self)} as! [GastosModel]
+            }
+    }
 }
