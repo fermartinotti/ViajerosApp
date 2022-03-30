@@ -15,10 +15,10 @@ struct itemModel : Identifiable, Codable, Equatable {
     var cantidad: Int
     var done:Bool = false
     
-    init(descripcion:String, cantidad:Int){
+    init(descripcion:String, cantidad:Int, done:Bool){
         self.descripcion=descripcion
         self.cantidad=cantidad
-        self.done=false
+        self.done=done
     }
     
 }

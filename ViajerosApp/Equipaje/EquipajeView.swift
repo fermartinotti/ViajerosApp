@@ -66,7 +66,7 @@ struct EquipajeView: View {
                                     equipajeVM.borrarItem(item: unItem)
                                 }label:{
                                     Image(systemName: "trash.fill")
-                                }
+                                }.tint(.red)
                             }.swipeActions(edge: .trailing){
                                 Button {
                                     equipajeVM.marcarItem(item: unItem, resultado: !unItem.done)

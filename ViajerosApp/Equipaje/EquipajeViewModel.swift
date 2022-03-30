@@ -16,10 +16,10 @@ class EquipajeViewModel : ObservableObject {
     private var database = Firestore.firestore()
     
     init (){
-        getAllCanciones()
+        getAllEquipajes()
     }
     
-    func getAllCanciones(){
+    func getAllEquipajes(){
         database.collection("equipaje")
             .addSnapshotListener{ query, error in
                 if let error = error{
@@ -32,30 +32,25 @@ class EquipajeViewModel : ObservableObject {
     }
     
     func agregarItem(descripcion:String, cantidad:Int){
-        let nuevoItem = itemModel(descripcion: descripcion, cantidad: cantidad)
+        let nuevoItem = itemModel(descripcion: descripcion, cantidad: cantidad, done: true)
         do{
             _ = try database.collection("equipaje").addDocument(from: nuevoItem)
         }catch {
             print ("Error al crear: \(error)")
         }
     }
-    
-//    func agregarItem(descripcion:String, cantidad:Int){
-//        let nuevoItem = itemModel(descripcion: descripcion, cantidad: cantidad)
-//        misItems.append(nuevoItem)
-//    }
 
     func borrarItem(item:itemModel){
-        if let index = misItems.firstIndex(of: item){
-            misItems.remove(at: index)
-        }
+        database.collection("equipaje").document(item.id!).delete()
     }
 
     func marcarItem(item:itemModel, resultado:Bool){
-        let posicionAActualizar=misItems.firstIndex(of: item)
-            if let posicion=posicionAActualizar{
-                misItems[posicion].done=resultado
-            }
+        var itemModificado=itemModel(descripcion: item.descripcion, cantidad: item.cantidad, done: !item.done)
+        do {
+            try database.collection("equipaje").document(item.id!).setData(from: itemModificado)
+        }catch {
+            print ("Error al actualizar: \(error)")
+        }
     }
     
 }
