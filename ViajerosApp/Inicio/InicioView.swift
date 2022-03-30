@@ -58,15 +58,26 @@ struct InicioView: View {
                     Spacer()
                 }else{
                     Spacer()
-                    Text("Faltan").bold().font(.title)
-                    Text(countDownString(from: nowDate, to: inicioVM.inicioModel.fechaDeViaje))
-                        .font(.title).bold()
-                                .onAppear(perform: {
-                                    _ = self.timer
-                                })
-                    Text("Para iniciar tu viaje a").bold().font(.title)
-                    Text(inicioVM.inicioModel.lugarDeViaje)
-                        .bold().font(.title).background(.black.opacity(0.3)).foregroundColor(.white)
+                    if (inicioVM.inicioModel.fechaDeViaje > nowDate){
+                        Text("Faltan").bold().font(.title)
+                        Text(countDownString(from: nowDate, to: inicioVM.inicioModel.fechaDeViaje))
+                            .font(.title).bold()
+                                    .onAppear(perform: {
+                                        _ = self.timer
+                                    })
+                        Text("Para iniciar tu viaje a").bold().font(.title)
+                        Text(inicioVM.inicioModel.lugarDeViaje)
+                            .bold().font(.title).background(.black.opacity(0.3)).foregroundColor(.white)
+                    }else{
+                        VStack {
+                            Text("Comenzo tu viaje a").bold().font(.title)
+                            Text(inicioVM.inicioModel.lugarDeViaje)
+                                .bold().font(.title).background(.black.opacity(0.3)).foregroundColor(.white)
+                            Text("¡A disfrutar!").bold().font(.title)
+                        }
+
+                    }
+                    
                     Spacer()
                     Button(
                         action:{
