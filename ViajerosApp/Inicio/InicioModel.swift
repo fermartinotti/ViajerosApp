@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
-struct InicioModel: Codable{
+struct InicioModel: Identifiable, Codable{
+    @DocumentID var id: String?
     var fechaDeViaje:Date
     var lugarDeViaje:String
     

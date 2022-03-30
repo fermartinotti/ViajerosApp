@@ -30,7 +30,7 @@ struct InicioView: View {
             .scaledToFill()
             .blur(radius: 1, opaque: false)
             VStack{
-                if inicioVM.inicioModel.lugarDeViaje == ""{
+                if inicioVM.viaje.lugarDeViaje == ""{
                     Spacer()
                     VStack(alignment: .center) {
                         Text("¿A donde vas a viajar?")
@@ -58,20 +58,20 @@ struct InicioView: View {
                     Spacer()
                 }else{
                     Spacer()
-                    if (inicioVM.inicioModel.fechaDeViaje > nowDate){
+                    if (inicioVM.viaje.fechaDeViaje > nowDate){
                         Text("Faltan").bold().font(.title)
-                        Text(countDownString(from: nowDate, to: inicioVM.inicioModel.fechaDeViaje))
+                        Text(countDownString(from: nowDate, to: inicioVM.viaje.fechaDeViaje))
                             .font(.title).bold()
                                     .onAppear(perform: {
                                         _ = self.timer
                                     })
                         Text("Para iniciar tu viaje a").bold().font(.title)
-                        Text(inicioVM.inicioModel.lugarDeViaje)
+                        Text(inicioVM.viaje.lugarDeViaje)
                             .bold().font(.title).background(.black.opacity(0.3)).foregroundColor(.white)
                     }else{
                         VStack {
                             Text("Comenzo tu viaje a").bold().font(.title)
-                            Text(inicioVM.inicioModel.lugarDeViaje)
+                            Text(inicioVM.viaje.lugarDeViaje)
                                 .bold().font(.title).background(.black.opacity(0.3)).foregroundColor(.white)
                             Text("¡A disfrutar!").bold().font(.title)
                         }
@@ -97,7 +97,8 @@ struct InicioView: View {
                     ).padding(.bottom, 80)
                         .alert(isPresented:$mostrarAlerta){
                             Alert(title: Text("¿Estas seguro de iniciar un nuevo viaje?"), message: Text("Solo eliminara lugar y fecha. Tus transportes, equipaje y gastos se guardaran"), primaryButton: .destructive(Text("Confirmar")){
-                                inicioVM.inicioModel.lugarDeViaje = ""
+                                // BORRAR VIAJE
+                                inicioVM.borrarDestino()
                                 self.destino = ""
                             }, secondaryButton: .cancel(Text("Cancelar"))
                             )
@@ -121,8 +122,8 @@ struct InicioView: View {
         }
 }
 
-struct InicioView_Previews: PreviewProvider {
-    static var previews: some View {
-        InicioView()
-    }
-}
+//struct InicioView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        InicioView()
+//    }
+//}

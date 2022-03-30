@@ -6,15 +6,17 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
-enum TipoDeViaje: Encodable, Decodable {
+enum TipoDeViaje: String, Codable, CaseIterable{
     case AVION
     case BARCO
     case TREN
 }
 
 struct transporteModel : Identifiable,Encodable,Decodable, Equatable{
-    let id: String
+    @DocumentID var id: String?
     var origen:String
     var destino:String
     var fechaSalida:Date
@@ -23,7 +25,6 @@ struct transporteModel : Identifiable,Encodable,Decodable, Equatable{
     var tipoDeViaje:TipoDeViaje
     
     init(origen:String, destino:String, fechaSalida:Date, fechaLlegada:Date, codigoViaje:String, tipoDeViaje:TipoDeViaje){
-        id=UUID().uuidString
         self.origen=origen
         self.destino=destino
         self.fechaSalida=fechaSalida
