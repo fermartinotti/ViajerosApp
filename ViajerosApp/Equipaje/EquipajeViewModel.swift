@@ -32,7 +32,7 @@ class EquipajeViewModel : ObservableObject {
     }
     
     func agregarItem(descripcion:String, cantidad:Int){
-        let nuevoItem = itemModel(descripcion: descripcion, cantidad: cantidad, done: true)
+        let nuevoItem = itemModel(descripcion: descripcion, cantidad: cantidad, done: false)
         do{
             _ = try database.collection("equipaje").addDocument(from: nuevoItem)
         }catch {
